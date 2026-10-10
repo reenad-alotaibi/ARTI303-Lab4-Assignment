@@ -1,0 +1,43 @@
+13 ?- house = house.
+true.
+ because both atoms identical
+
+14 ?- house = abc.
+false.
+ because both atoms diffrenets
+
+
+15 ?- edge(a,b) = edge(C,b).
+C = a.
+variable C matching with a
+
+16 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+Both variables can be assigned matching values
+
+17 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+will match even if the order change - The structures unify in either direction
+
+18 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+The variables match the corresponding
+
+19 ?- edge(A,A) = edge(b,c).
+false.
+A can not be equal for both b and c
+
+20 ?- edge(A,A) = edge(b,b).
+A = b.
+because both positions have same value
+
+21 ?- A = B , B = f.
+A = B, B = f.
+Both variables are unified with f
+
+22 ?- A = B , B = f, A = e.
+false.
+A linked to f so can not be both f and e
